@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "youtube_absolute_time_extension",
-  "description": "Show absolute time on YouTube",
+  "name": "youtube_metadata_extension",
+  "description": "Show video metadata on YouTube",
   "version": "0.1.0",
   "icons": {
     "16": "images/icon-16.png",
@@ -15,7 +15,8 @@
         "scripts/content.js"
       ],
       "matches": [
-        "https://www.youtube.com/*"
+        "https://www.youtube.com/watch*",
+        "https://www.youtube.com/live/*"
       ]
     }
   ]
