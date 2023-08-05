@@ -1,4 +1,6 @@
 (function() {
+  console.log("YouTube Metadata Extension Loading");
+
   // https://qiita.com/h53/items/05139982c6fd81212b08
   function toISOStringWithTimezone(date) {
     const pad = function (str) {
@@ -48,6 +50,12 @@
   const uploadDateInputElement = document.createElement("input");
   const startTimeInputElement = document.createElement("input");
   const endTimeInputElement = document.createElement("input");
+
+  channelIdInputElement.onclick = (event) => event.target.select();
+  videoIdInputElement.onclick = (event) => event.target.select();
+  uploadDateInputElement.onclick = (event) => event.target.select();
+  startTimeInputElement.onclick = (event) => event.target.select();
+  endTimeInputElement.onclick = (event) => event.target.select();
 
   menuElement.appendChild(channelIdElement);
   menuElement.appendChild(channelIdInputElement);
