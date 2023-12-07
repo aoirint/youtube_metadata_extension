@@ -3,7 +3,6 @@
 ## Code format
 
 ```shell
-npm install -g prettier
-
-prettier --write .
+npm run lint
+npm run format
 ```
