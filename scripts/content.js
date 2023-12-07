@@ -1,25 +1,6 @@
 ;(function () {
   console.log('YouTube Metadata Extension Loading')
 
-  // https://qiita.com/h53/items/05139982c6fd81212b08
-  function toISOStringWithTimezone(date) {
-    const pad = function (str) {
-      return ('0' + str).slice(-2)
-    }
-    const year = date.getFullYear().toString()
-    const month = pad((date.getMonth() + 1).toString())
-    const day = pad(date.getDate().toString())
-    const hour = pad(date.getHours().toString())
-    const min = pad(date.getMinutes().toString())
-    const sec = pad(date.getSeconds().toString())
-    const tz = -date.getTimezoneOffset()
-    const sign = tz >= 0 ? '+' : '-'
-    const tzHour = pad((tz / 60).toString())
-    const tzMin = pad((tz % 60).toString())
-
-    return `${year}-${month}-${day}T${hour}:${min}:${sec}${sign}${tzHour}:${tzMin}`
-  }
-
   const menuElement = document.createElement('div')
   menuElement.style.backgroundColor = '#FFFFFFCC'
   menuElement.style.padding = '4px 16px'
