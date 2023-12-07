@@ -11,13 +11,8 @@
   },
   "content_scripts": [
     {
-      "js": [
-        "scripts/content.js"
-      ],
-      "matches": [
-        "https://www.youtube.com/watch*",
-        "https://www.youtube.com/live/*"
-      ]
+      "js": ["scripts/content.js"],
+      "matches": ["https://www.youtube.com/watch*", "https://www.youtube.com/live/*"]
     }
   ]
 }
