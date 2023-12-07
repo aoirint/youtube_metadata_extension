@@ -2,8 +2,8 @@
   "name": "youtube_metadata_extension",
   "version": "0.0.0",
   "scripts": {
-    "lint": "prettier --check .",
-    "format": "prettier --write ."
+    "lint": "eslint .",
+    "format": "eslint --fix ."
   },
   "devDependencies": {
     "eslint": "8.55.0",
