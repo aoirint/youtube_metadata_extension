@@ -2,7 +2,7 @@
   "name": "youtube_metadata_extension",
   "version": "0.0.0",
   "scripts": {
-    "lint": "eslint",
+    "lint": "eslint && prettier --check .",
     "format": "eslint --fix && prettier --write ."
   },
   "devDependencies": {
