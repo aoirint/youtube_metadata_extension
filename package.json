@@ -1,0 +1,11 @@
+{
+  "name": "youtube_metadata_extension",
+  "version": "0.0.0",
+  "scripts": {
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "3.1.0"
+  }
+}
