@@ -30,7 +30,7 @@
   menuElement.style.left = "0px";
   menuElement.style.bottom = "0px";
 
-  let intervalVideoJsonLdId = null;
+  let intervalVideoObjectId = null;
   let intervalChannelId = null;
 
   const channelIdElement = document.createElement("div");
@@ -111,33 +111,32 @@
     }
   }
 
-  function doIntervalVideoJsonLd() {
-    const videoJsonLdElement = document.querySelector("#scriptTag");
-    if (videoJsonLdElement == null) return;
+  function doIntervalVideoObject() {
+    const videoObjectElement = document.querySelector("#watch7-content");
+    if (videoObjectElement == null) return;
 
-    const videoJsonLd = JSON.parse(videoJsonLdElement.innerText);
+    const uploadDateElement = videoObjectElement.querySelector("meta[itemprop=\"uploadDate\"]");
+    const uploadDateString = uploadDateElement != null ? uploadDateElement.content : "";
+    uploadDateInputElement.value = uploadDateString;
 
-    const uploadDateString = videoJsonLd.uploadDate;
-
-    const publication = videoJsonLd.publication;
-    if (publication != null) {
-      const publicationItem = publication[0];
-
-      const startTimeString = publicationItem.startDate;
-      const endTimeString = publicationItem.endDate;
+    const publicationElement = videoObjectElement.querySelector("span[itemprop=\"publication\"]");
+    if (publicationElement != null) {
+      const startDateElement = publicationElement.querySelector("meta[itemprop=\"startDate\"]");
+      const startDateString = startDateElement != null ? startDateElement.content : "";
+      const endDateElement = publicationElement.querySelector("meta[itemprop=\"endDate\"]");
+      const endDateString = endDateElement != null ? endDateElement.content : "";
   
-      uploadDateInputElement.value = uploadDateString;
-      startTimeInputElement.value = startTimeString;
-      endTimeInputElement.value = endTimeString;
+      startTimeInputElement.value = startDateString;
+      endTimeInputElement.value = endDateString;
     }
 
     // stop interval if loaded
-    clearInterval(intervalVideoJsonLdId);
+    clearInterval(intervalVideoObjectId);
   }
 
   const videoId = getVideoId();
   videoIdInputElement.value = videoId != null ? videoId : null;
 
   intervalChannelId = setInterval(doIntervalChannelId, 100);
-  intervalVideoJsonLdId = setInterval(doIntervalVideoJsonLd, 100);
+  intervalVideoObjectId = setInterval(doIntervalVideoObject, 100);
 })();
