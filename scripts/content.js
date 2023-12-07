@@ -26,6 +26,7 @@
   menuElement.style.fontSize = "12pt";
   menuElement.style.display = "flex";
   menuElement.style.flexDirection = "column";
+  menuElement.style.zIndex = "999";
   menuElement.style.position = "fixed";
   menuElement.style.left = "0px";
   menuElement.style.bottom = "0px";
