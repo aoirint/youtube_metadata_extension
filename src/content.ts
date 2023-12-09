@@ -1,3 +1,5 @@
+import { utcToZonedTime, format } from 'date-fns-tz'
+
 console.log('YouTube Metadata Extension Loading')
 
 const menuElement = document.createElement('div')
@@ -110,7 +112,10 @@ function doIntervalVideoObject() {
     'meta[itemprop="uploadDate"]',
   )
   const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
-  uploadDateInputElement.value = uploadDateString
+  uploadDateInputElement.value = format(
+    utcToZonedTime(new Date(uploadDateString).toISOString(), 'Asia/Tokyo'),
+    "yyyy-MM-dd'T'HH:mm:ssxxx",
+  )
 
   const publicationElement = videoObjectElement.querySelector('span[itemprop="publication"]')
   if (publicationElement != null) {
@@ -123,8 +128,14 @@ function doIntervalVideoObject() {
     )
     const endDateString = endDateElement != null ? endDateElement.content : ''
 
-    startTimeInputElement.value = startDateString
-    endTimeInputElement.value = endDateString
+    startTimeInputElement.value = format(
+      utcToZonedTime(new Date(startDateString).toISOString(), 'Asia/Tokyo'),
+      "yyyy-MM-dd'T'HH:mm:ssxxx",
+    )
+    endTimeInputElement.value = format(
+      utcToZonedTime(new Date(endDateString).toISOString(), 'Asia/Tokyo'),
+      "yyyy-MM-dd'T'HH:mm:ssxxx",
+    )
   }
 
   // stop interval if loaded
