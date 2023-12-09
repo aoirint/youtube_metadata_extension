@@ -1,5 +1,10 @@
 # YouTube Metadata Extension
 
+## Development environment
+
+- Node 20
+- npm 10
+
 ## Build
 
 ```shell
