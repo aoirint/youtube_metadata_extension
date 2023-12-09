@@ -33,11 +33,19 @@
   const startTimeInputElement = document.createElement('input')
   const endTimeInputElement = document.createElement('input')
 
-  channelIdInputElement.onclick = (event) => event.target.select()
-  videoIdInputElement.onclick = (event) => event.target.select()
-  uploadDateInputElement.onclick = (event) => event.target.select()
-  startTimeInputElement.onclick = (event) => event.target.select()
-  endTimeInputElement.onclick = (event) => event.target.select()
+  function clickToSelectAllHandler(event: MouseEvent) {
+    if (!(event.target instanceof HTMLInputElement)) {
+      throw Error('Unexpected event target type')
+    }
+
+    event.target.select()
+  }
+
+  channelIdInputElement.addEventListener('click', clickToSelectAllHandler)
+  videoIdInputElement.addEventListener('click', clickToSelectAllHandler)
+  uploadDateInputElement.addEventListener('click', clickToSelectAllHandler)
+  startTimeInputElement.addEventListener('click', clickToSelectAllHandler)
+  endTimeInputElement.addEventListener('click', clickToSelectAllHandler)
 
   menuElement.appendChild(channelIdElement)
   menuElement.appendChild(channelIdInputElement)
