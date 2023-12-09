@@ -107,15 +107,21 @@
     const videoObjectElement = document.querySelector('#watch7-content')
     if (videoObjectElement == null) return
 
-    const uploadDateElement = videoObjectElement.querySelector('meta[itemprop="uploadDate"]')
+    const uploadDateElement: HTMLMetaElement | null = videoObjectElement.querySelector(
+      'meta[itemprop="uploadDate"]',
+    )
     const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
     uploadDateInputElement.value = uploadDateString
 
     const publicationElement = videoObjectElement.querySelector('span[itemprop="publication"]')
     if (publicationElement != null) {
-      const startDateElement = publicationElement.querySelector('meta[itemprop="startDate"]')
+      const startDateElement: HTMLMetaElement | null = publicationElement.querySelector(
+        'meta[itemprop="startDate"]',
+      )
       const startDateString = startDateElement != null ? startDateElement.content : ''
-      const endDateElement = publicationElement.querySelector('meta[itemprop="endDate"]')
+      const endDateElement: HTMLMetaElement | null = publicationElement.querySelector(
+        'meta[itemprop="endDate"]',
+      )
       const endDateString = endDateElement != null ? endDateElement.content : ''
 
       startTimeInputElement.value = startDateString
