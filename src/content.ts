@@ -2,6 +2,8 @@ import { utcToZonedTime, format } from 'date-fns-tz'
 
 console.log('YouTube Metadata Extension Loading')
 
+const displayTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+
 const menuElement = document.createElement('div')
 menuElement.style.backgroundColor = '#FFFFFFCC'
 menuElement.style.padding = '4px 16px'
@@ -113,7 +115,7 @@ function doIntervalVideoObject() {
   )
   const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
   uploadDateInputElement.value = format(
-    utcToZonedTime(new Date(uploadDateString).toISOString(), 'Asia/Tokyo'),
+    utcToZonedTime(new Date(uploadDateString).toISOString(), displayTimezone),
     "yyyy-MM-dd'T'HH:mm:ssxxx",
   )
 
@@ -129,11 +131,11 @@ function doIntervalVideoObject() {
     const endDateString = endDateElement != null ? endDateElement.content : ''
 
     startTimeInputElement.value = format(
-      utcToZonedTime(new Date(startDateString).toISOString(), 'Asia/Tokyo'),
+      utcToZonedTime(new Date(startDateString).toISOString(), displayTimezone),
       "yyyy-MM-dd'T'HH:mm:ssxxx",
     )
     endTimeInputElement.value = format(
-      utcToZonedTime(new Date(endDateString).toISOString(), 'Asia/Tokyo'),
+      utcToZonedTime(new Date(endDateString).toISOString(), displayTimezone),
       "yyyy-MM-dd'T'HH:mm:ssxxx",
     )
   }
