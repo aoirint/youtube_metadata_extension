@@ -6,6 +6,8 @@
 npm run build
 ```
 
+Add `dist/` directory to your browser as the unpackaged browser extension.
+
 ## Code format
 
 ```shell
