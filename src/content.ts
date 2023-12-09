@@ -1,4 +1,4 @@
-import { utcToZonedTime, format } from 'date-fns-tz'
+import { format } from 'date-fns-tz'
 
 console.log('YouTube Metadata Extension Loading')
 
