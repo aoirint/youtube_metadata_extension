@@ -4,6 +4,7 @@
 
 - Node 20
 - npm 10
+- Google Chrome 120
 
 ## Build
 
