@@ -114,10 +114,9 @@ function doIntervalVideoObject() {
     'meta[itemprop="uploadDate"]',
   )
   const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
-  uploadDateInputElement.value = format(
-    utcToZonedTime(new Date(uploadDateString).toISOString(), displayTimezone),
-    "yyyy-MM-dd'T'HH:mm:ssxxx",
-  )
+  uploadDateInputElement.value = format(new Date(uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+    timeZone: displayTimezone,
+  })
 
   const publicationElement = videoObjectElement.querySelector('span[itemprop="publication"]')
   if (publicationElement != null) {
@@ -130,14 +129,12 @@ function doIntervalVideoObject() {
     )
     const endDateString = endDateElement != null ? endDateElement.content : ''
 
-    startTimeInputElement.value = format(
-      utcToZonedTime(new Date(startDateString).toISOString(), displayTimezone),
-      "yyyy-MM-dd'T'HH:mm:ssxxx",
-    )
-    endTimeInputElement.value = format(
-      utcToZonedTime(new Date(endDateString).toISOString(), displayTimezone),
-      "yyyy-MM-dd'T'HH:mm:ssxxx",
-    )
+    startTimeInputElement.value = format(new Date(startDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+      timeZone: displayTimezone,
+    })
+    endTimeInputElement.value = format(new Date(endDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+      timeZone: displayTimezone,
+    })
   }
 
   // stop interval if loaded
