@@ -12,8 +12,8 @@
   menuElement.style.left = '0px'
   menuElement.style.bottom = '0px'
 
-  let intervalVideoObjectId = null
-  let intervalChannelId = null
+  let intervalVideoObjectId: number | null = null
+  let intervalChannelId: number | null = null
 
   const channelIdElement = document.createElement('div')
   const videoIdElement = document.createElement('div')
