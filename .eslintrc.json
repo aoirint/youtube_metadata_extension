@@ -1,7 +1,15 @@
 {
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "env": {
     "browser": true,
     "es2021": true
-  }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "sourceType": "module",
+      "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint"
+  ]
 }
