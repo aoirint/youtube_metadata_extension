@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "tsc src/content.ts --noImplicitAny --module commonjs --outDir build && browserify build/content.js -o dist/content.js",
-    "lint": "eslint . && prettier --check .",
-    "format": "eslint --fix . && prettier --write ."
+    "lint": "eslint src/**/* && prettier --check src/**/*",
+    "format": "eslint --fix src/**/* && prettier --write src/**/*"
   },
   "devDependencies": {
     "browserify": "17.0.0",
