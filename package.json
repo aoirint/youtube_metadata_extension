@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "build": "tsc src/content.ts --noImplicitAny --module commonjs --outDir build && browserify build/content.js -o dist/content.js",
-    "lint": "prettier --check src/**/*.ts && eslint --ext .ts src/**/*",
-    "format": "prettier --write src/**/*.ts && eslint --fix --ext .ts src/**/*"
+    "lint": "prettier --check . && eslint --ext .ts src/**/*",
+    "format": "prettier --write . && eslint --fix --ext .ts src/**/*"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "6.13.2",
