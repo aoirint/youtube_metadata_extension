@@ -2,7 +2,7 @@
   "name": "youtube_metadata_extension",
   "version": "0.0.0",
   "scripts": {
-    "build": "browserify src/content.js -o dist/content.js",
+    "build": "tsc src/content.ts --noImplicitAny --module commonjs --outDir build && browserify build/content.js -o dist/content.js",
     "lint": "eslint . && prettier --check .",
     "format": "eslint --fix . && prettier --write ."
   },
