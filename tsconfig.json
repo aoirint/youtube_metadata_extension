@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "lib": [
+      "DOM",
+      "ES2021"
+    ],
     "noImplicitAny": true,
     "sourceMap": true
   },

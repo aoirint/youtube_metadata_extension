@@ -7,7 +7,7 @@
     "npm": "10.x"
   },
   "scripts": {
-    "build": "tsc src/content.ts --noImplicitAny --module commonjs --outDir build && browserify build/content.js -o dist/content.js && cp -r assets/* dist/",
+    "build": "tsc --project tsconfig.json --outDir build && browserify build/content.js -o dist/content.js && cp -r assets/* dist/",
     "lint": "prettier --check . && eslint --ext .ts src/**/*",
     "format": "prettier --write . && eslint --fix --ext .ts src/**/*"
   },
