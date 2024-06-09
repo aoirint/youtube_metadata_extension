@@ -114,9 +114,12 @@ function doIntervalVideoObject() {
     'meta[itemprop="uploadDate"]',
   )
   const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
-  uploadDateInputElement.value = format(new Date(uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-    timeZone: displayTimezone,
-  })
+  uploadDateInputElement.value =
+    uploadDateString != null
+      ? format(new Date(uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+          timeZone: displayTimezone,
+        })
+      : ''
 
   const publicationElement = videoObjectElement.querySelector('span[itemprop="publication"]')
   if (publicationElement != null) {
