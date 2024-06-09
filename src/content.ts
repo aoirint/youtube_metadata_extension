@@ -113,7 +113,7 @@ function doIntervalVideoObject() {
   const uploadDateElement: HTMLMetaElement | null = videoObjectElement.querySelector(
     'meta[itemprop="uploadDate"]',
   )
-  const uploadDateString = uploadDateElement != null ? uploadDateElement.content : ''
+  const uploadDateString = uploadDateElement != null ? uploadDateElement.content : null
   uploadDateInputElement.value =
     uploadDateString != null
       ? format(new Date(uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
@@ -126,11 +126,11 @@ function doIntervalVideoObject() {
     const startDateElement: HTMLMetaElement | null = publicationElement.querySelector(
       'meta[itemprop="startDate"]',
     )
-    const startDateString = startDateElement != null ? startDateElement.content : ''
+    const startDateString = startDateElement != null ? startDateElement.content : null
     const endDateElement: HTMLMetaElement | null = publicationElement.querySelector(
       'meta[itemprop="endDate"]',
     )
-    const endDateString = endDateElement != null ? endDateElement.content : ''
+    const endDateString = endDateElement != null ? endDateElement.content : null
 
     startTimeInputElement.value =
       startDateString != null
