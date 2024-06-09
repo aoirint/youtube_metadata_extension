@@ -129,12 +129,18 @@ function doIntervalVideoObject() {
     )
     const endDateString = endDateElement != null ? endDateElement.content : ''
 
-    startTimeInputElement.value = format(new Date(startDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-      timeZone: displayTimezone,
-    })
-    endTimeInputElement.value = format(new Date(endDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-      timeZone: displayTimezone,
-    })
+    startTimeInputElement.value =
+      startDateString != null
+        ? format(new Date(startDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+            timeZone: displayTimezone,
+          })
+        : ''
+    endTimeInputElement.value =
+      endDateString != null
+        ? format(new Date(endDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
+            timeZone: displayTimezone,
+          })
+        : ''
   }
 
   // stop interval if loaded
