@@ -153,5 +153,5 @@ function doIntervalVideoObject() {
 const videoId = getVideoId()
 videoIdInputElement.value = videoId != null ? videoId : null
 
-intervalChannelId = setInterval(doIntervalChannelId, 100)
-intervalVideoObjectId = setInterval(doIntervalVideoObject, 100)
+intervalChannelId = window.setInterval(doIntervalChannelId, 100)
+intervalVideoObjectId = window.setInterval(doIntervalVideoObject, 100)
