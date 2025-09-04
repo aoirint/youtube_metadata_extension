@@ -1,4 +1,5 @@
-import { format } from 'date-fns-tz'
+import { format } from 'date-fns'
+import { TZDate } from '@date-fns/tz'
 
 console.log('YouTube Metadata Extension Loading')
 
@@ -116,9 +117,7 @@ function doIntervalVideoObject() {
   const uploadDateString = uploadDateElement != null ? uploadDateElement.content : null
   uploadDateInputElement.value =
     uploadDateString != null
-      ? format(new Date(uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-          timeZone: displayTimezone,
-        })
+      ? format(TZDate.tz(displayTimezone, uploadDateString), "yyyy-MM-dd'T'HH:mm:ssxxx")
       : ''
 
   const publicationElement = videoObjectElement.querySelector('span[itemprop="publication"]')
@@ -134,15 +133,11 @@ function doIntervalVideoObject() {
 
     startTimeInputElement.value =
       startDateString != null
-        ? format(new Date(startDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-            timeZone: displayTimezone,
-          })
+        ? format(TZDate.tz(displayTimezone, startDateString), "yyyy-MM-dd'T'HH:mm:ssxxx")
         : ''
     endTimeInputElement.value =
       endDateString != null
-        ? format(new Date(endDateString), "yyyy-MM-dd'T'HH:mm:ssxxx", {
-            timeZone: displayTimezone,
-          })
+        ? format(TZDate.tz(displayTimezone, endDateString), "yyyy-MM-dd'T'HH:mm:ssxxx")
         : ''
   }
 
