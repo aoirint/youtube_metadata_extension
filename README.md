@@ -2,9 +2,9 @@
 
 ## Development environment
 
-- Node 20
+- Node 22
 - npm 10
-- Google Chrome 120
+- Google Chrome 140
 
 ## Build
 
