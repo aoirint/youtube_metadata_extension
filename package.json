@@ -20,7 +20,6 @@
     "@typescript-eslint/eslint-plugin": "8.42.0",
     "@typescript-eslint/parser": "8.42.0",
     "eslint": "9.39.1",
-    "eslint-config-prettier": "10.1.8",
     "globals": "16.5.0",
     "prettier": "3.6.2",
     "ts-loader": "9.5.4",
