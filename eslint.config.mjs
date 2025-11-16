@@ -18,7 +18,7 @@ export default [
         ...globals.browser,
       },
       parser: tsParser,
-      ecmaVersion: 2022,
+      ecmaVersion: 2021,
       sourceType: 'module',
       parserOptions: {
         project: './tsconfig.json',
