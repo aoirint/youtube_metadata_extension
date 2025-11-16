@@ -9,23 +9,28 @@ on:
       - 'main'
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22
-          cache: 'npm'
+          node-version: '22'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        shell: bash
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run lint
-        shell: bash
-        run: npm run lint
+        run: pnpm run lint
