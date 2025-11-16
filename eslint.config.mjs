@@ -17,6 +17,9 @@ const compat = new FlatCompat({
 
 export default defineConfig([
   {
+    ignores: ['pnpm-lock.yaml'],
+  },
+  {
     extends: compat.extends(
       'eslint:recommended',
       'plugin:@typescript-eslint/recommended',
