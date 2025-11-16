@@ -6,6 +6,10 @@
 - pnpm 10
 - Google Chrome 140
 
+```shell
+pnpm install --frozen-lockfile
+```
+
 ## Build
 
 ```shell
