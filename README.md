@@ -3,7 +3,7 @@
 ## Development environment
 
 - Node 22
-- npm 10
+- pnpm 10
 - Google Chrome 140
 
 ## Build
