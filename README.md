@@ -9,7 +9,7 @@
 ## Build
 
 ```shell
-npm run build
+pnpm run build
 ```
 
 Add `dist/` directory to your browser as the unpackaged browser extension.
@@ -17,6 +17,6 @@ Add `dist/` directory to your browser as the unpackaged browser extension.
 ## Code format
 
 ```shell
-npm run lint
-npm run format
+pnpm run lint
+pnpm run format
 ```
