@@ -9,12 +9,3 @@ minimumReleaseAge: 10080
 
 # Delay the pdates of subdependencies until the direct dependencies are updated
 resolutionMode: time-based
-
-# Dependencies allowed to run install scripts
-onlyBuiltDependencies:
-  - esbuild
-
-# Dependencies allowed to be imported as indirect dependencies
-# https://github.com/pnpm/pnpm/issues/8878#issuecomment-2546442011
-publicHoistPattern:
-  - '*eslint*'
