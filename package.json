@@ -12,14 +12,15 @@
   },
   "packageManager": "pnpm@10.20.0",
   "dependencies": {
-    "date-fns": "4.1.0",
-    "@date-fns/tz": "1.4.0"
+    "@date-fns/tz": "1.4.0",
+    "date-fns": "4.1.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "8.42.0",
     "@typescript-eslint/parser": "8.42.0",
     "eslint": "9.34.0",
     "eslint-config-prettier": "10.1.8",
+    "globals": "16.5.0",
     "prettier": "3.6.2",
     "ts-loader": "9.5.4",
     "typescript": "5.9.2",
