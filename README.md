@@ -24,3 +24,15 @@ Add `dist/` directory to your browser as the unpackaged browser extension.
 pnpm run lint
 pnpm run format
 ```
+
+## Manage GitHub Action versions
+
+We use [pinact](https://github.com/suzuki-shunsuke/pinact) to manage GitHub Action versions.
+
+```shell
+# Lock
+pinact run
+
+# Update
+pinact run --update
+```
