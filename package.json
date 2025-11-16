@@ -2,28 +2,29 @@
   "name": "youtube_metadata_extension",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "22.x",
-    "npm": "10.x"
-  },
   "scripts": {
     "build": "webpack --config webpack.config.js && cp -r assets/* dist/",
     "lint": "prettier --check . && eslint --ext .ts src/**/*",
     "format": "prettier --write . && eslint --fix --ext .ts src/**/*"
   },
+  "engines": {
+    "node": "22.x"
+  },
+  "packageManager": "pnpm@10.20.0",
+  "dependencies": {
+    "@date-fns/tz": "1.4.0",
+    "date-fns": "4.1.0"
+  },
   "devDependencies": {
+    "@eslint/js": "9.39.1",
     "@typescript-eslint/eslint-plugin": "8.42.0",
     "@typescript-eslint/parser": "8.42.0",
-    "eslint": "9.34.0",
-    "eslint-config-prettier": "10.1.8",
+    "eslint": "9.39.1",
+    "globals": "16.5.0",
     "prettier": "3.6.2",
     "ts-loader": "9.5.4",
     "typescript": "5.9.2",
     "webpack": "5.101.3",
     "webpack-cli": "6.0.1"
-  },
-  "dependencies": {
-    "date-fns": "4.1.0",
-    "@date-fns/tz": "1.4.0"
   }
 }

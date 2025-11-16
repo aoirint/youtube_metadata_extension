@@ -1,0 +1,11 @@
+# Enforce engine versions in package.json
+engineStrict: true
+
+# Enable save-exact
+savePrefix: ''
+
+# Delay the installation of newly published versions (minutes)
+minimumReleaseAge: 10080
+
+# Delay the pdates of subdependencies until the direct dependencies are updated
+resolutionMode: time-based
